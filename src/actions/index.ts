@@ -11,6 +11,8 @@ export function useActions(actions: any, deps?: any): any {
       }
       return bindActionCreators(actions, dispatch);
     },
+
+    // eslint-disable-next-line
     deps ? [dispatch, ...deps] : deps
   );
 }

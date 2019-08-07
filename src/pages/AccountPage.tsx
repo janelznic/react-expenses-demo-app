@@ -8,7 +8,7 @@ import { RecordDialog, RecordTable } from '../components';
 interface Props extends RouteComponentProps<void> {}
 
 function RecordPage(props: Props) {
-  const classes = useStyles();
+  const css = useStyles();
   const [open, setOpen] = React.useState(false);
 
   const handleClose = () => {
@@ -20,7 +20,7 @@ function RecordPage(props: Props) {
   };
 
   return (
-    <Grid container className={classes.root}>
+    <Grid container className={css.root}>
       <RecordDialog open={open} onClose={handleClose} />
       <Grid item xs={6}>
         <Typography variant="h4" gutterBottom>
@@ -28,8 +28,8 @@ function RecordPage(props: Props) {
         </Typography>
       </Grid>
       <Grid item xs={6}>
-        <div className={classes.buttonContainer}>
-          <Button className={classes.button} variant="contained" color="secondary" onClick={handleAddItem}>
+        <div className={css.buttonContainer}>
+          <Button className={css.button} variant="contained" color="secondary" onClick={handleAddItem}>
             Add new record
           </Button>
         </div>

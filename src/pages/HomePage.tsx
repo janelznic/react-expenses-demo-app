@@ -9,21 +9,21 @@ import HomeBox from '../components/HomeBox';
 interface Props extends RouteComponentProps<void> {}
 
 function HomePage(props: Props) {
-  const classes = useStyles();
+  const css = useStyles();
   const [boxColor, setBoxColor] = React.useState('red');
   // const recordList = useSelector((state: RootState) => state.recordList);
 
   const onButtonClick = () => setBoxColor(boxColor === 'red' ? 'blue' : 'red');
 
   return (
-    <div className={classes.root}>
+    <div className={css.root}>
       <Typography variant="h4" gutterBottom>
         Your account balance is XXX {/* {recordList.length} */} dollars.
       </Typography>
 
-      <div className={classes.centerContainer}>
+      <div className={css.centerContainer}>
         <HomeBox size={300} color={boxColor} />
-        <Button className={classes.button} onClick={onButtonClick} variant="outlined" color="primary">
+        <Button className={css.button} onClick={onButtonClick} variant="outlined" color="primary">
           Change Color
         </Button>
       </div>

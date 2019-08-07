@@ -19,7 +19,6 @@ export function RecordTable(props: Props) {
   const recordActions = useActions(RecordActions);
 
   const balance = getBalance(recordList);
-  console.log('Balance', balance);
 
   return (
     <Paper className={css.paper}>

@@ -1,24 +1,26 @@
 import { Button, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import * as React from 'react';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import HomeBox from '../components/HomeBox';
-// import { RootState } from '../reducers';
+import { RootState } from '../reducers';
+import { getBalance } from '../helpers/Helpers';
 
 interface Props extends RouteComponentProps<void> {}
 
 function HomePage(props: Props) {
   const css = useStyles();
   const [boxColor, setBoxColor] = React.useState('red');
-  // const recordList = useSelector((state: RootState) => state.recordList);
+  const recordList = useSelector((state: RootState) => state.recordList);
+  const balance = getBalance(recordList);
 
   const onButtonClick = () => setBoxColor(boxColor === 'red' ? 'blue' : 'red');
 
   return (
     <div className={css.root}>
-      <Typography variant="h4" gutterBottom>
-        Your account balance is XXX {/* {recordList.length} */} dollars.
+      <Typography variant="h6" gutterBottom>
+        Your account balance is {balance} dollars.
       </Typography>
 
       <div className={css.centerContainer}>

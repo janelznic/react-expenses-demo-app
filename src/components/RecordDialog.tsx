@@ -1,14 +1,11 @@
 // prettier-ignore
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@material-ui/core";
-import { makeStyles } from '@material-ui/styles';
-import Input from '@material-ui/core/Input';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Input } from "@material-ui/core";
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import * as React from 'react';
 import { useActions } from '../actions';
 import * as RecordActions from '../actions/record';
 import { categories } from '../consts/categories';
-// import Dropdown from './Dropdown';
 
 interface Props {
   open: boolean;
@@ -17,9 +14,8 @@ interface Props {
 
 export function RecordDialog(props: Props) {
   const { open, onClose } = props;
-  const classes = useStyles();
   const [newRecordCategory, setNewRecordCategory] = React.useState('');
-  const [newRecordAmount, setNewRecordAmount] = React.useState('');
+  const [newRecordAmount, setNewRecordAmount] = React.useState(0);
   const [newRecordDescription, setNewRecordDescription] = React.useState('');
   const recordActions = useActions(RecordActions);
 
@@ -37,13 +33,13 @@ export function RecordDialog(props: Props) {
     onClose();
 
     // reset values if user reopens the dialog
-    setNewRecordAmount('');
+    setNewRecordAmount(0);
     setNewRecordDescription('');
     setNewRecordCategory('');
   };
 
   const handleChangeAmount = (event: any) => {
-    setNewRecordAmount(event.target.value);
+    setNewRecordAmount(parseInt(event.target.value));
   };
 
   const handleChangeCategory = (event: any) => {
@@ -71,15 +67,16 @@ export function RecordDialog(props: Props) {
       </DialogContent>
 
       <DialogContent>
-        <TextField
+        <Input
           placeholder='Description'
+          type='text'
           value={newRecordDescription}
           onChange={handleChangeDescription}
         />
       </DialogContent>
 
       <DialogContent>
-        <TextField
+        <Input
           placeholder='Amount'
           type='number'
           value={newRecordAmount}
@@ -95,10 +92,3 @@ export function RecordDialog(props: Props) {
     </Dialog>
   );
 }
-
-const useStyles = makeStyles({
-  // textField: {
-  //   width: '80%',
-  //   margin: 20
-  // }
-});

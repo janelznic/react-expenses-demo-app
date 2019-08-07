@@ -9,17 +9,21 @@ import * as RecordActions from '../actions/record';
 import { Record } from '../model/model';
 import { RootState } from '../reducers';
 import { categories } from '../consts/categories';
+import { getBalance } from '../helpers/Helpers';
 
 interface Props {}
 
 export function RecordTable(props: Props) {
-  const classes = useStyles();
+  const css = useStyles();
   const recordList = useSelector((state: RootState) => state.recordList);
   const recordActions = useActions(RecordActions);
 
+  const balance = getBalance(recordList);
+  console.log('Balance', balance);
+
   return (
-    <Paper className={classes.paper}>
-      <Table className={classes.table}>
+    <Paper className={css.paper}>
+      <Table className={css.table}>
         <TableHead>
           <TableRow>
             <TableCell padding="default">Description</TableCell>
@@ -43,6 +47,10 @@ export function RecordTable(props: Props) {
               </TableRow>
             );
           })}
+          <TableRow>
+            <TableCell variant='footer' className={css.tableFooter}>Total balance:</TableCell>
+            <TableCell variant='footer' className={css.tableFooter}>{balance}</TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </Paper>
@@ -57,5 +65,9 @@ const useStyles = makeStyles({
   },
   table: {
     width: '100%'
+  },
+  tableFooter: {
+    fontWeight: 'bold',
+    fontSize: '100%'
   }
 });

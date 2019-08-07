@@ -1,1 +1,1 @@
-export const categories: any = ['Other', 'Food', 'Wear'];
+export const categories: string[] = ['Other', 'Food', 'Wear'];

@@ -1,17 +1,17 @@
 import { Button, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import * as React from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import HomeBox from '../components/HomeBox';
-import { RootState } from '../reducers';
+// import { RootState } from '../reducers';
 
 interface Props extends RouteComponentProps<void> {}
 
 function HomePage(props: Props) {
   const classes = useStyles();
   const [boxColor, setBoxColor] = React.useState('red');
-  const recordList = useSelector((state: RootState) => state.recordList);
+  // const recordList = useSelector((state: RootState) => state.recordList);
 
   const onButtonClick = () => setBoxColor(boxColor === 'red' ? 'blue' : 'red');
 

@@ -9,7 +9,6 @@ interface IProps {
   colors: Array<string>;
 }
 
-/* Component */
 export const PieChartComponent = (props: IProps) => {
   const d3Container = useRef(null);
 
@@ -58,7 +57,20 @@ export const PieChartComponent = (props: IProps) => {
           return `translate(${arc.centroid(res)})`;
         })
         .attr('text-anchor', 'middle')
-        .text((res: Expenses) => res.value);
+        .attr('style', 'z-index: 1000;')
+        .text((res: any) => {
+          if (res.value > 0) {
+            return res.data.label;
+          }
+        })
+          .append('tspan')
+            .attr('x', 0)
+            .attr('dy', '1.2em')
+            .text((res: any) => {
+              if (res.value > 0) {
+                return `(${res.value})`;
+              }
+            });
     }
   }, [props.data, props.width, props.height, props.colors]);
 

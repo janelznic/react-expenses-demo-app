@@ -48,7 +48,7 @@ function Drawer() {
           <ListItemIcon>
             <AttachMoney />
           </ListItemIcon>
-          <ListItemText primary="Expenses / Incomes" />
+          <ListItemText primary="Account" />
         </ListItem>
       </List>
     </div>

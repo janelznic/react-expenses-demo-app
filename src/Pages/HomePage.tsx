@@ -3,10 +3,9 @@ import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { useSelector } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
-// import HomeBox from '../components/HomeBox';
 import { RootState } from '../Reducers';
 import { calculateChart, getBalance } from '../Helpers/Helpers';
-import { Expenses, Record } from '../Interfaces';
+import { Record } from '../Interfaces';
 import { PieChartComponent } from '../Components/PieChartComponent';
 
 interface Props extends RouteComponentProps<void> {}

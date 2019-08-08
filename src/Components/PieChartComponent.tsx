@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Expenses } from '../Interfaces/Expanses.d'
+import { Expenses } from '../Interfaces'
 import * as d3 from 'd3';
 
 interface IProps {

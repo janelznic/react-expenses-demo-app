@@ -7,9 +7,15 @@ export const getBalance = (recordList: Record[]) => {
   }, 0);
 };
 
+interface Summary {
+  categoryId: number;
+  label: string;
+  value: number;
+}
+
 export const calculateChart = (recordList: Record[]) => {
-  const createEmptyCategory = () => {
-    let summary: any = [];
+  const createEmptyCategory = (): Summary[] => {
+    let summary: Summary[] = [];
 
     categories.forEach((category, index) => summary.push({
       categoryId: index,
@@ -20,8 +26,8 @@ export const calculateChart = (recordList: Record[]) => {
     return summary;
   };
 
-  let expenses = createEmptyCategory();
-  let incomes = createEmptyCategory();
+  let expenses: Summary[] = createEmptyCategory();
+  let incomes: Summary[] = createEmptyCategory();
 
   recordList.forEach(record => {
     if (record.amount < 0) {

@@ -1,4 +1,4 @@
-import { Action, ActionType, Record } from '../model/model';
+import { Action, ActionType, Record } from '../Interfaces';
 import createReducer from './createReducer';
 
 export const recordList = createReducer<Record[]>([], {

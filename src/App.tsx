@@ -10,10 +10,9 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Route, RouteComponentProps, Router } from 'react-router-dom';
 import { history } from './configureStore';
-import { Record } from './model/model';
-import HomePage from './pages/HomePage';
-import AccountPage from './pages/AccountPage';
-import { RootState } from './reducers/index';
+import { Record } from './Interfaces';
+import { AccountPage, HomePage } from './Pages';
+import { RootState } from './Reducers';
 import withRoot from './withRoot';
 
 function Routes() {

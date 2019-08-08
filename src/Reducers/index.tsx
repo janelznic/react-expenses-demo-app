@@ -1,7 +1,7 @@
 import { History } from 'history';
 import { combineReducers } from 'redux';
-import { Record } from '../model/model';
-import * as recordReducer from './record';
+import { Record } from '../Interfaces';
+import * as recordReducer from './RecordReducer';
 
 export interface RootState {
   recordList: Record[];

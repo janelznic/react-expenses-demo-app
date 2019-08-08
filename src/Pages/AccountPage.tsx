@@ -3,11 +3,11 @@ import { Theme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/styles';
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { RecordDialog, RecordTable } from '../components';
+import { RecordDialogComponent, RecordTableComponent } from '../Components';
 
 interface Props extends RouteComponentProps<void> {}
 
-function RecordPage(props: Props) {
+export function AccountPage(props: Props) {
   const css = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -21,7 +21,7 @@ function RecordPage(props: Props) {
 
   return (
     <Grid container className={css.root}>
-      <RecordDialog open={open} onClose={handleClose} />
+      <RecordDialogComponent open={open} onClose={handleClose} />
       <Grid item xs={6}>
         <Typography variant="h4" gutterBottom>
           Expenses / Incomes
@@ -35,7 +35,7 @@ function RecordPage(props: Props) {
         </div>
       </Grid>
       <Grid item xs={12}>
-        <RecordTable />
+        <RecordTableComponent />
       </Grid>
     </Grid>
   );
@@ -61,5 +61,3 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginBottom: 15
   }
 }));
-
-export default RecordPage;

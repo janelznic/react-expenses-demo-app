@@ -4,16 +4,16 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { makeStyles } from '@material-ui/styles';
 import * as React from 'react';
 import { useSelector } from 'react-redux';
-import { useActions } from '../actions';
-import * as RecordActions from '../actions/record';
-import { Record } from '../model/model';
-import { RootState } from '../reducers';
-import { categories } from '../consts/categories';
-import { getBalance } from '../helpers/Helpers';
+import { useActions } from '../Actions';
+import * as RecordActions from '../Actions/RecordActions';
+import { Record } from '../Interfaces';
+import { RootState } from '../Reducers';
+import { categories } from '../consts';
+import { getBalance } from '../Helpers/Helpers';
 
 interface Props {}
 
-export function RecordTable(props: Props) {
+export function RecordTableComponent(props: Props) {
   const css = useStyles();
   const recordList = useSelector((state: RootState) => state.recordList);
   const recordActions = useActions(RecordActions);
@@ -47,8 +47,12 @@ export function RecordTable(props: Props) {
             );
           })}
           <TableRow>
-            <TableCell variant='footer' className={css.tableFooter}>Total balance:</TableCell>
-            <TableCell variant='footer' className={css.tableFooter}>{balance}</TableCell>
+            <TableCell variant="footer" className={css.tableFooter}>
+              Total balance:
+            </TableCell>
+            <TableCell variant="footer" className={css.tableFooter}>
+              {balance}
+            </TableCell>
           </TableRow>
         </TableBody>
       </Table>

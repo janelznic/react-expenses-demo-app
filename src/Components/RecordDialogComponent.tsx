@@ -3,16 +3,16 @@ import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Input } from
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import * as React from 'react';
-import { useActions } from '../actions';
-import * as RecordActions from '../actions/record';
-import { categories } from '../consts/categories';
+import { useActions } from '../Actions';
+import * as RecordActions from '../Actions/RecordActions';
+import { categories } from '../consts';
 
 interface Props {
   open: boolean;
   onClose: () => void;
 }
 
-export function RecordDialog(props: Props) {
+export function RecordDialogComponent(props: Props) {
   const { open, onClose } = props;
   const [newRecordCategory, setNewRecordCategory] = React.useState('');
   const [newRecordAmount, setNewRecordAmount] = React.useState(0);
@@ -24,7 +24,7 @@ export function RecordDialog(props: Props) {
   };
 
   const handleAddRecord = () => {
-    recordActions.addRecord({
+    recordActions.addRecordAction({
       id: Math.random(),
       categoryId: newRecordCategory,
       amount: newRecordAmount,
@@ -55,33 +55,23 @@ export function RecordDialog(props: Props) {
       <DialogTitle>Add a new record</DialogTitle>
 
       <DialogContent>
-        <Select
-          value={newRecordCategory}
-          onChange={event => handleChangeCategory(event)}
-          input={<Input />}
-        >
+        <Select value={newRecordCategory} onChange={(event) => handleChangeCategory(event)} input={<Input />}>
           {categories.map((name: string, index: number) => {
-            return (<MenuItem value={index} key={index}>{name}</MenuItem>);
+            return (
+              <MenuItem value={index} key={index}>
+                {name}
+              </MenuItem>
+            );
           })}
         </Select>
       </DialogContent>
 
       <DialogContent>
-        <Input
-          placeholder='Description'
-          type='text'
-          value={newRecordDescription}
-          onChange={handleChangeDescription}
-        />
+        <Input placeholder="Description" type="text" value={newRecordDescription} onChange={handleChangeDescription} />
       </DialogContent>
 
       <DialogContent>
-        <Input
-          placeholder='Amount'
-          type='number'
-          value={newRecordAmount}
-          onChange={handleChangeAmount}
-        />
+        <Input placeholder="Amount" type="number" value={newRecordAmount} onChange={handleChangeAmount} />
       </DialogContent>
 
       <DialogActions>

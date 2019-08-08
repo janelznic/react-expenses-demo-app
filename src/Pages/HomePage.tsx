@@ -22,7 +22,7 @@ export function HomePage(props: Props) {
       <Typography variant="h4" gutterBottom>
         Expenses
       </Typography>
-      <PieChartComponent data={expenses} width={350} height={350} colors={['#e5c4aa', '#c08d74', '#ac6a4b']} />
+      <PieChartComponent data={expenses} width={350} height={350} colors={['#825fc1', '#ce5fb1', '#f57193', '#f79774', '#f9c763', '#ac6a4b', '#b19ccf']} />
     </div>;
 
   const incomesChart =
@@ -30,7 +30,7 @@ export function HomePage(props: Props) {
       <Typography variant="h4" gutterBottom>
         Incomes
       </Typography>
-      <PieChartComponent data={incomes} width={350} height={350} colors={['#bbd5b8', '#3aa7a9', '#45787e']} />
+      <PieChartComponent data={incomes} width={350} height={350} colors={['#4ae075', '#00C492', '#00A59D', '#008595', '#00667D', '#2F4858', '#6b9a73']} />
     </div>;
 
   return (

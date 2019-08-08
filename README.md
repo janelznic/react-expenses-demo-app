@@ -11,7 +11,6 @@
 -   [x] [Redux-Persist](https://github.com/rt2zz/redux-persist)
 -   [x] [React Router](https://github.com/ReactTraining/react-router)
 -   [x] [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
--   [x] [TodoMVC example](http://todomvc.com)
 
 
 ## Screenshots

@@ -3,6 +3,7 @@
 
 ## Contains
 -   [x] [Material-UI](https://github.com/mui-org/material-ui)
+-   [x] [D3.js](https://d3js.org/)
 -   [x] [Typescript](https://www.typescriptlang.org/)
 -   [x] [React](https://facebook.github.io/react/)
 -   [x] [Redux](https://github.com/reactjs/redux)

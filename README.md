@@ -26,7 +26,7 @@ ___
 
 ## Improvement opportunities
 -   [ ] Form validations
--   [ ] Create standard React DOM components
+-   [ ] Standard React DOM components ```class ComponentName extends React.Component {```
 -   [ ] Unit tests
 
 

@@ -1,6 +1,17 @@
 # React Expenses Demo App with TypeScript and Redux
 
 
+## Application functionality (task description)
+
+__Screens:__
+1. List of expenses/incomes by category with possibility to add new items
+2. There must be some charts for visualizing the data(could be by category or if incomes cover expenses)
+3. Bonus, user login. Users can create shared budgets(list of expenses/incomes)
+
+Should be done in React. For state management you can choose Hooks or Redux.
+
+___
+
 ## Contains
 -   [x] [Material-UI](https://github.com/mui-org/material-ui)
 -   [x] [D3.js](https://d3js.org/)
